@@ -1,0 +1,9 @@
+username : 
+password : 
+hostname : 
+port : 3306 
+databaseName : "youtubeAPI"
+
+FetchInterval : 10
+TotalAPIKeys: 1
+youtubeAPI1: 
