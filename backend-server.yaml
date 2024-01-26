@@ -1,6 +1,6 @@
 username : "admin"
 password : "Mohit84009"
-hostname : "stickers.czc0oguo8svs.ap-south-1.rds.amazonaws.com"
+hostname : "vidoes.czfergeg8svs.ap-north-1.rds.amazonaws.com"
 port : 3306 
 databaseName : "youtubeAPI"
 
@@ -11,4 +11,4 @@ PageSize: 10
 Query: "gamming"
 
 TotalAPIKeys: 1
-youtubeAPI1: "AIzaSyAiL3oNcAoldu72kNniXT8T_8r2Y2FaCSI"
+youtubeAPI1: "AIzaSyAiL3oNcsvervrvervXT8T_8cwscscwc"
