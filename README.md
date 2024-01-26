@@ -89,22 +89,52 @@ Without publishedAfter, it will give you cached results which will be too old
     $ cd Fampay-Backend
     ```
 
-2. Before starting the server, provide the necessary information in the `backend-server.yaml` file. This includes the credentials for the database (AWS RDS) and YouTube API keys. Example:
+2. Before starting the server, provide the necessary information in the `backend-server.yaml` file. This includes the credentials for the database (AWS RDS) and YouTube API keys. 
+
+    Example:
 
     ```
-    username: "admin"
-    password: "USERabc"
-    hostname: "videos.cz154656546svs.ap-north-10.rds.amazonaws.com"
-    port: 3306
-    databaseName: "youtubeAPI"
+    username : "admin"
+    password : "userABC"
+    hostname : "videos.c2165455svs.ap-north-1.rds.amazonaws.com"
+    port : 3306 
+    databaseName : "youtubeAPI"
+
 
     FetchInterval : 10
     MaxResult: 5
     PageSize: 10
+    Query: "gamming"
 
     TotalAPIKeys: 1
-    youtubeAPI1: "AIzaSyAiL3oNc4527523752452T8T_8r2Y2FaCSI"
+    youtubeAPI1: "AIzaSyAiL3oNcsdgeoldu72kgsrergniXT8Tedrgfgdfg"
     ```
+
+    This file contains the desired information required for the application.
+    <details>
+    <summary>Click to expand and know more about credentials:!</summary>
+      
+     
+      - `username`: The username for the database connection.
+      - `password`: The password for the database connection.
+      - `hostname`: The hostname of the database server.
+      - `port`: The port number for the database connection.
+      - `databaseName`: The name of the database.
+      
+      Result based information:
+      - `FetchInterval`: The time interval for fetching data.
+      - `MaxResult`: The maximum number of results to fetch from YouTube.
+      - `PageSize`: The size of each page for pagination.
+      - `Query`: The search query for fetching specific data.
+      
+      YouTube API information:
+      - `TotalAPIKeys`: The total number of API keys available.
+      - `youtubeAPI1`: The first YouTube API key to be used.
+    
+
+    </details>
+   
+
 
 3. Once you have provided the desired information, you can start the server.
 
