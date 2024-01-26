@@ -107,7 +107,7 @@ Without publishedAfter, it will give you cached results which will be too old
     Query: "gamming"
 
     TotalAPIKeys: 1
-    youtubeAPI1: "AIzaSyAiL3oNcsdgeoldu72kgsrergniXT8Tedrgfgdfg"
+    youtubeAPI1: "vbaaSDVSAERWEReoldu72kgsrergniXT8Tedrgfgdfg"
     ```
 
     This file contains the desired information required for the application.
