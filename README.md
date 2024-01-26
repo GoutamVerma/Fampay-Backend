@@ -50,7 +50,7 @@ Without publishedAfter, it will give you cached results which will be too old
      - Endpoint: `/v1/getVideos`
      - Method: `GET`
      - Parameters: `None`
-     - Example: `curl -X GET "http://localhost:1323/v1/getVideos"`
+     - Example: `curl -X GET "http://localhost:1323/v1/getVideos?pageno=1"`
      - Response: 
        ```json
         [{
