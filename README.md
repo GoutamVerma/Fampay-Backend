@@ -94,7 +94,7 @@ Without publishedAfter, it will give you cached results which will be too old
     ```
     username: "admin"
     password: "USERabc"
-    hostname: "vidoes.cz154656546svs.ap-north-10.rds.amazonaws.com"
+    hostname: "videos.cz154656546svs.ap-north-10.rds.amazonaws.com"
     port: 3306
     databaseName: "youtubeAPI"
 

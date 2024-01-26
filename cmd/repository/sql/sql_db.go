@@ -68,12 +68,13 @@ func AddVideos(model models.Video) error {
 }
 
 // GetVideos retrieves all videos from the youtubeVideos table
-func GetVideos() ([]models.Video, error) {
+func GetVideos(page int) ([]models.Video, error) {
+	pageSize := config.PageSize()
 	var videos []models.Video
-
-	rows, err := db.Query("SELECT * FROM youtubeVideos")
+	query := "SELECT * FROM youtubeVideos LIMIT ? OFFSET ?"
+	rows, err := db.Query(query, pageSize, (page-1)*pageSize)
 	if err != nil {
-		return nil, nil
+		return nil, err
 	}
 	defer rows.Close()
 
@@ -110,4 +111,17 @@ func DeleteAllVideos() error {
 	}
 	fmt.Println("All Videos deleted successfully")
 	return nil
+}
+
+// GetTotalRecords retrieves the total number of records in the youtubeVideos table
+func GetTotalRecords() (int, error) {
+	var totalRecords int
+
+	// Execute a COUNT query to get the total number of records
+	err := db.QueryRow("SELECT COUNT(*) FROM youtubeVideos").Scan(&totalRecords)
+	if err != nil {
+		return 0, err
+	}
+
+	return totalRecords, nil
 }

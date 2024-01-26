@@ -76,6 +76,16 @@ func ReadPort() int {
 	return viper.GetInt("port")
 }
 
+func ReadQuery() string {
+	viper.SetConfigFile("backend-server.yaml")
+	viper.AddConfigPath(".")
+	err := viper.ReadInConfig()
+	if err != nil {
+		panic(err)
+	}
+	return viper.GetString("Query")
+}
+
 func FetchInternval() int {
 	viper.SetConfigFile("backend-server.yaml")
 	viper.AddConfigPath(".")

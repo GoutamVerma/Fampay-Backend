@@ -8,6 +8,7 @@ databaseName : "youtubeAPI"
 FetchInterval : 10
 MaxResult: 5
 PageSize: 10
+Query: "gamming"
 
 TotalAPIKeys: 1
 youtubeAPI1: "AIzaSyAiL3oNcAoldu72kNniXT8T_8r2Y2FaCSI"
