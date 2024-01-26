@@ -12,7 +12,7 @@ import (
 func RegisterHandlers(e *echo.Echo) {
 	e.GET("/v1/getVideos", GetVideo)
 	e.GET("/v1/deleteVideos", DeleteAllVideos)
-	go usecase.StartYouTubeAPICall("gamming", 5)
+	go usecase.StartYouTubeAPICall("gamming")
 }
 
 // GetVideo handles the GET /v1/getVideos route

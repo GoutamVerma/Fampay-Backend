@@ -1,9 +1,13 @@
-username : 
-password : 
-hostname : 
+username : "admin"
+password : "Mohit84009"
+hostname : "stickers.czc0oguo8svs.ap-south-1.rds.amazonaws.com"
 port : 3306 
 databaseName : "youtubeAPI"
 
+
 FetchInterval : 10
+MaxResult: 5
+PageSize: 10
+
 TotalAPIKeys: 1
-youtubeAPI1: 
+youtubeAPI1: "AIzaSyAiL3oNcAoldu72kNniXT8T_8r2Y2FaCSI"

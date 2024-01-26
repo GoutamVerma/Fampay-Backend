@@ -7,6 +7,26 @@ import (
 	viper "github.com/spf13/viper"
 )
 
+func MaxResults() int {
+	viper.SetConfigFile("backend-server.yaml")
+	viper.AddConfigPath(".")
+	err := viper.ReadInConfig()
+	if err != nil {
+		panic(err)
+	}
+	return viper.GetInt("MaxResult")
+}
+
+func PageSize() int {
+	viper.SetConfigFile("backend-server.yaml")
+	viper.AddConfigPath(".")
+	err := viper.ReadInConfig()
+	if err != nil {
+		panic(err)
+	}
+	return viper.GetInt("PageSize")
+}
+
 func ReadUserName() string {
 	viper.SetConfigFile("backend-server.yaml")
 	viper.AddConfigPath(".")

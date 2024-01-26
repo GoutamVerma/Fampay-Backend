@@ -12,7 +12,7 @@ import (
 	"google.golang.org/api/youtube/v3"
 )
 
-func StartYouTubeAPICall(query string, maxResults int64) {
+func StartYouTubeAPICall(query string) {
 	apiKeys := config.ReadYouTubeAPIKeys()
 	apiKeyIndex := 0
 	interval := config.FetchInternval()
@@ -25,7 +25,7 @@ func StartYouTubeAPICall(query string, maxResults int64) {
 			case <-ticker.C:
 				go func() {
 					apiKey := apiKeys[apiKeyIndex]
-					err := fetchAndStoreVideos(apiKey, query, maxResults)
+					err := fetchAndStoreVideos(apiKey, query)
 					if err != nil {
 						log.Println("Error fetching and storing videos:", err)
 					}
@@ -38,7 +38,8 @@ func StartYouTubeAPICall(query string, maxResults int64) {
 	}()
 }
 
-func fetchAndStoreVideos(apiKey string, query string, maxResults int64) error {
+func fetchAndStoreVideos(apiKey string, query string) error {
+	maxResults := config.MaxResults()
 	youtubeService, err := youtube.New(&http.Client{
 		Transport: &transport.APIKey{Key: apiKey},
 	})
@@ -46,7 +47,7 @@ func fetchAndStoreVideos(apiKey string, query string, maxResults int64) error {
 		return err
 	}
 
-	videos, err := fetchLatestVideos(youtubeService, query, maxResults)
+	videos, err := fetchLatestVideos(youtubeService, query, int64(maxResults))
 	if err != nil {
 		return err
 	}
